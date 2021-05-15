@@ -1,4 +1,4 @@
-#Problem
+# Problem
 
 - Write a program in C or in Go to reverse the word in a given sentence. For example:
 input: today is the first day of the rest of my life
