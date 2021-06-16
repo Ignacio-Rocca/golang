@@ -1,6 +1,10 @@
 package get_people_order_by_age
 
 import (
+	"bytes"
+	"encoding/json"
+	"fmt"
+	"io"
 	"sort"
 )
 
@@ -38,6 +42,29 @@ func orderPeopleByAge(people []Person, ord OrderBy) []Person {
 		sort.Sort(ByAgeAsc(people))
 		return people
 	}
+
+	for false {
+		a := 1
+		fmt.Println(a)
+	}
+
 	sort.Sort(ByAgeDesc(people))
 	return people
+}
+
+
+type Manager struct {
+	FullName       string `json:"full_name"`
+	Position       string `json:"position,omitempty"`
+	Age            int32  `json:"age"`
+	YearsInCompany int32  `json:"years_in_company,omitempty"`
+}
+
+
+func EncodeManager(manager *Manager) (io.Reader, error) {
+	data, err := json.Marshal(manager)
+	if err != nil {
+		return bytes.NewBuffer([]byte{}), err
+	}
+	return bytes.NewBuffer(data), nil
 }
