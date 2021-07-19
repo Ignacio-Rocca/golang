@@ -1,4 +1,4 @@
-package merge_two_linked_lists
+package main
 
 import (
 	"reflect"
@@ -7,29 +7,29 @@ import (
 
 func Test_mergeTwoLists(t *testing.T) {
 	type args struct {
-		l1 *ListNode
-		l2 *ListNode
+		l1 *Node
+		l2 *Node
 	}
 	tests := []struct {
 		name string
 		args args
-		want *ListNode
+		want *Node
 	}{
 		{
 			name: "success",
 			args: args{
-				l1: &ListNode{Val: 1, Next: &ListNode{Val:2, Next: &ListNode{Val: 4}}},
-				l2: &ListNode{Val: 1, Next: &ListNode{Val:3, Next: &ListNode{Val: 4}}},
+				l1: &Node{Val: 1, Next: &Node{Val: 2, Next: &Node{Val: 4}}},
+				l2: &Node{Val: 1, Next: &Node{Val: 3, Next: &Node{Val: 4}}},
 			},
-			want: &ListNode{Val: 1, Next: &ListNode{Val:1, Next: &ListNode{Val: 2,  Next: &ListNode{Val: 3,  Next: &ListNode{Val: 4, Next: &ListNode{Val: 4}}}}}},
+			want: &Node{Val: 1, Next: &Node{Val: 1, Next: &Node{Val: 2,  Next: &Node{Val: 3,  Next: &Node{Val: 4, Next: &Node{Val: 4}}}}}},
 		},
 		{
 			name: "success",
 			args: args{
-				l1: &ListNode{},
-				l2: &ListNode{},
+				l1: &Node{},
+				l2: &Node{},
 			},
-			want: &ListNode{},
+			want: &Node{},
 		},
 	}
 	for _, tt := range tests {

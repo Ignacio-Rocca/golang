@@ -1,22 +1,19 @@
-package merge_two_linked_lists
+package main
 
-type ListNode struct {
-    Val int
-    Next *ListNode
-}
 
-func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
-	if l1 == nil && l2 == nil { return &ListNode{} }
+
+func mergeTwoLists(l1 *Node, l2 *Node) *Node {
+	if l1 == nil && l2 == nil { return &Node{} }
 
 	if l1 == nil { return l2 }
 
 	if l2 == nil { return l1 }
 
 	if l1.Val == 0 && l2.Val == 0 {
-		return &ListNode{}
+		return &Node{}
 	}
 
-	result := &ListNode{}
+	result := &Node{}
 	if l1.Val <= l2.Val {
 		result.Val = l1.Val
 		l1 = l1.Next
@@ -25,7 +22,7 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		l2 = l2.Next
 	}
 
-	lastNode := &ListNode{}
+	lastNode := &Node{}
 	result.Next = lastNode
 
 	for l1.Next != nil || l2.Next != nil  {
@@ -37,16 +34,16 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 			l2 = l2.Next
 		}
 
-		lastNode.Next = &ListNode{}
+		lastNode.Next = &Node{}
 		lastNode = lastNode.Next
 	}
 
 	if l1.Val <= l2.Val {
 		lastNode.Val = l1.Val
-		lastNode.Next = &ListNode{Val: l2.Val}
+		lastNode.Next = &Node{Val: l2.Val}
 	} else {
 		lastNode.Val = l2.Val
-		lastNode.Next = &ListNode{Val: l1.Val}
+		lastNode.Next = &Node{Val: l1.Val}
 	}
 
 	return result

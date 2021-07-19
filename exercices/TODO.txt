@@ -1,0 +1,4 @@
+implementar circular linkedlist
+implementar linkedlist with tail and head pointer ( to be more efficiently)
+implementar doubly linked lsit ( with next and previous pointer)
+funciones: http://cslibrary.stanford.edu/105/LinkedListProblems.pdf

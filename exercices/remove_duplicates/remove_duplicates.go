@@ -6,7 +6,7 @@ import "fmt"
 //Do not allocate extra space for another array, you must do this by modifying the input array in-place with O(1) extra memory.
 
 func main () {
-	nums := []int{1,1,2,2,2,2,2,2,3,3,4,4,5,5}
+	nums := []int{1,1,2,2,2,2,2,3,3,4,4,5,5}
 
 	// nums is passed in by reference. (i.e., without making a copy)
 	length := removeDuplicates(nums)
