@@ -1,2 +1,2 @@
 # golang
-This repository includes material to study and exercises to practice
+This repository includes exercises in go to practice
